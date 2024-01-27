@@ -1,0 +1,29 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Sample data for visualization (replace with actual data)
+gender_data = {'Male': 500, 'Female': 600, 'Other': 20}
+age_data = {'0-20': 200, '21-40': 350, '41-60': 450, '61+': 520}
+disease_prevalence = {'Heart Disease': 300, 'Diabetes': 250, 'Cancer': 200, 'Hypertension': 400}
+
+# Patient Demographics Visualization
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
+plt.pie(gender_data.values(), labels=gender_data.keys(), autopct='%1.1f%%')
+plt.title('Distribution of Patients by Gender')
+
+plt.subplot(1, 2, 2)
+sns.barplot(x=list(age_data.keys()), y=list(age_data.values()))
+plt.xlabel('Age Group')
+plt.ylabel('Number of Patients')
+plt.title('Age Distribution of Patients')
+plt.tight_layout()
+plt.show()
+
+# Disease Prevalence Visualization
+plt.figure(figsize=(8, 6))
+sns.barplot(x=list(disease_prevalence.values()), y=list(disease_prevalence.keys()), palette='viridis')
+plt.xlabel('Number of Patients')
+plt.ylabel('Disease')
+plt.title('Top Diseases by Prevalence')
+plt.show()
